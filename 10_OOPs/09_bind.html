@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bind</title>
+  <style>
+    body{
+      background-color: rgb(59, 59, 59);
+    }
+  </style>
+</head>
+
+<body>
+  <button>button clicked</button>
+</body>
+<script>
+  class React {
+    constructor(){
+      this.library="React"
+    this.server="https//:serverto.com"
+
+    //requirement
+    document
+    .querySelector('button')
+    //here bind is used to bind this(react) to the function
+    .addEventListener('click',this.handleClick.bind(this))
+    }
+
+    handleClick(){
+      console.log("Button clicked")//it will run
+      console.log(this)//here it will print button 
+      //because it is accessed by button in above
+      //to avoid it and access data from class bind is used
+      console.log(this.server)//undefined
+    }
+  }
+  const app=new React()
+</script>
+</html>

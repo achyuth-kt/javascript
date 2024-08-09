@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(48, 48, 48);
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+<script>
+  const myURL='https://api.github.com/users/achyuth-k-t'
+  const xhr=new XMLHttpRequest()
+  xhr.open('GET',myURL)
+  console.log(xhr.readyState)//in which state(is it in 1st state or 2nd or 3rd or 4th)
+  xhr.send()
+  //function for in which state it is
+  //onreadyStatechange means (when ever there is change in state)
+  xhr.onreadystatechange=function(){
+    console.log(xhr.readyState)
+    if(xhr.readyState===4){
+      //this is used to get response text from this xhr
+      //response text is api in object form (but in string)
+      let data=this.responseText
+      console.log(data)
+      //error (because data is not a "object" it is a "string")
+      //console.log(data.followers)
+
+      //convert to object
+      const obj=JSON.parse(data)
+      console.log(obj.id)//138607790(id in gitHub)
+    }
+  }
+</script>
+</html>

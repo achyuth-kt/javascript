@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creating a div(Element)</title>
+  <style>
+    .bg-black{
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  
+</body>
+<script>
+  const div=document.createElement("div")
+  console.log(div)//div is created
+  div.className='main'
+  div.id=Math.round(Math.random()*10+1)
+  //or
+  div.setAttribute('title','generated title')
+  console.log(div)
+  div.style.backgroundColor='pink'
+  //inner text 
+
+  //div.innerText='Div element is created'
+
+ //or(optimal)
+ const addtext=document.createTextNode('div element is created')
+ div.appendChild(addtext)
+
+ //add div to the body
+ document.body.append(div)
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bg-black{
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+    <h1>Java script basics</h1>
+    <button>stop</button>
+</body>
+<script>
+  //after 2 secpond it is printed
+  setTimeout(function(){
+    console.log('hello after 2 seconds')
+  },2000)
+  //or
+  const printHii=function(){
+    console.log("Hii good morning")
+  }
+  //also by function reference
+  setTimeout(printHii,2000)
+
+  //2 second after change head1
+  
+  function headChange(){
+    const head=document.querySelector('h1')
+       head.innerHTML="Head is Changed"
+  }
+  //in set time perenthesis is not used
+  const changeHead=setTimeout(headChange,2000)
+  //to stop the changeHead before 2 second by stop button
+  const butt=document.querySelector('button')
+  butt.addEventListener('click',function(){
+    clearTimeout(changeHead)
+    console.log("Stopped")
+  })
+
+</script>
+</html>

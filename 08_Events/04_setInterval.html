@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .bg-black{
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+    
+</body>
+<script>
+  //setInteval
+  //setInterval(function(){
+  //  const timee=Date.now()
+  //  console.log("Time is :",timee.toLocaleString())
+  //},2000)
+
+
+  //if function input should take
+  function printer(str){
+    console.log(str)
+  }
+  const reference=setInterval(printer,2000,"Good Morning")//which is input
+  clearInterval(reference)//stopped
+</script>
+</html>

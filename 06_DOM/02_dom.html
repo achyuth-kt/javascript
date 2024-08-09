@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parent | Child</title>
+  <style>
+    .bg-black{
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <div class="parent">
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+  </div>
+</body>
+<script>
+//parent and child element
+const parent=document.querySelector('.parent')
+console.log(parent)//accessed parent
+
+console.log(parent.children)//stored in array like format
+//to access 1st ele
+console.log(parent.children[0].innerHTML)//Monday
+
+//to loop we should convert to array or
+for(let i=0;i<parent.children.length;i++){
+  console.log(parent.children[i].innerHTML)
+  //Monday Tuesday Wednesday Thursday is printed
+}
+//styling can be done also
+parent.children[1].style.backgroundColor='green'
+//access first element only (first and last)
+console.log(parent.firstElementChild)
+console.log(parent.lastElementChild)
+
+//child to parent
+const dayOne=document.querySelector('.day')
+//parent element is accessed
+console.log(dayOne.parentElement)
+//next day can be accessed by
+console.log(dayOne.nextElementSibling)
+
+//Nodes 
+console.log("Nodes",parent.childNodes)//9 nodes
+//space is also a node div is a node comment is also a node
+</script>
+</html>

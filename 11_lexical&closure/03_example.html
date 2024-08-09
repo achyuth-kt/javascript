@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: rgb(71, 71, 71);
+  }
+</style>
+<body>
+  <button id="green">green</button>
+  <button id="yellow">yellow</button>
+</body>
+<script>
+   function clickHandler(color){
+     //document.body.style.backgroundColor=`${color}`
+     //below code solved the problem
+     return function(){//now no early execution
+      document.body.style.backgroundColor=`${color}`
+     }
+   }
+   //it will always be yellow 
+   //it executed before clicking
+   //it executed instead of returning it 
+   document.getElementById('green').onclick=clickHandler('green')
+   document.getElementById('yellow').onclick=clickHandler('yellow')
+</script>
+</html>

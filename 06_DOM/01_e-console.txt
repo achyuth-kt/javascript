@@ -1,0 +1,91 @@
+//console of dom html file
+
+
+=>"getElementId"
+
+document.getElementId('title')
+output:-
+ <h1 id="title" class="heading">DOM learning from youtube</h1>
+ 
+
+ document.getElementId('title').id
+ 'title'
+
+ document.getElementId('title').class
+ undefined
+
+
+"We use className not class"
+ document.getElementId('title').className
+ 'heading'
+
+ OR
+ document.getElementById('title').getAttribute('class')
+ 'heading'
+
+ //setting (changing)
+ document.getElementById('title').setAttribute('class','test heading')
+ class will be "test heading"
+
+ const title=document.getElementId('title')
+ //styling css 
+ title.style.backgroundColor='green'
+
+
+ title.textcontent
+ DOM learning from youtube hidden
+
+ title.innerText
+ DOM learning from youtube
+
+ title.innerHTML
+ <h1 id="title" class="heading">DOM learning from youtube <span style="display: none;">hidden</span></h1>
+
+ getElementByClassName
+
+ document.getElementByClassName('heading')
+ DOM learning from youtube
+ <span style="display: none;">hidden</span>
+
+
+//Query selector
+
+document.querySelector('h1')
+//it will select first "h1" in html code
+
+document.querySelector('#title')//for id # is used
+
+document.querySelector('.heading')//for class
+
+//to access input whos type is password
+document.querySelector('input[type="password"]')
+
+
+//first li backgroundColor will be "red"
+const myul=document.querySelector('ul')
+myul.querySelector('li').style.backgroundColor('red')
+
+//querySelectorAll
+
+const list=document.querySelectorAll('li')
+//all lists are in list
+
+//to change we can't use
+list.style.color='pink'  *WRONG*
+
+we can do it by
+list[0].style.backgroundColor='pink'
+
+//we can use for each in it
+list.forEach(function (l){
+    l.style.backgroundColor='green'
+    
+})
+
+//loop for list
+document.getElementByClassName('list-item')
+
+we cannot use foreach
+convert to array
+const tempclassList=document.getElementByClassName('list-item')
+Array.from(tempclassList)

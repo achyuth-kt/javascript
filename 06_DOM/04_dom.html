@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add,Edit and Remove</title>
+  <style>
+    .bg-black{
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <ul class="lang">
+    <li>Java script</li>
+  </ul>
+</body>
+<script>
+  //function to create a list
+  function create(lang){
+    //list is created
+    const li=document.createElement('li')
+    li.innerText=`${lang}`
+    document.querySelector('ul').appendChild(li)
+  }
+  create('python')
+  create('Java')
+  //Optimal function
+  function optimalCreate(lang){
+    const li=document.createElement('li')
+    li.appendChild(document.createTextNode(lang))
+    document.querySelector('ul').appendChild(li)
+  }
+  optimalCreate('react')
+  optimalCreate("typescript")
+
+  //edit 
+  //selection of second element
+  let secLang=document.querySelector('li:nth-child(2)')
+  secLang.innerText='Node js'
+
+  //or
+  secLang=document.querySelector('li:nth-child(2)')
+  const li=document.createElement('li')
+  li.appendChild(document.createTextNode("NODE JS"))
+  //replace with is used
+  secLang.replaceWith(li)
+ 
+  //edit outer html
+  let firstLang=document.querySelector('li:first-child')
+  //outer one
+  firstLang.outerHTML='<li>JAVA SCRIPT</li>'
+
+   
+  //Remove a list
+  const lastChild=document.querySelector('li:last-child')
+  lastChild.remove()
+</script>
+</html>
